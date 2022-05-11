@@ -1160,8 +1160,8 @@ public class DatanodeManager {
         throw new DisallowedDatanodeException(nodeReg, message);
       }
       // update node registration with the ip and hostname from rpc request
-      nodeReg.setIpAddr(ip);
-      nodeReg.setPeerHostName(hostname);
+      // nodeReg.setIpAddr(ip);
+      // nodeReg.setPeerHostName(hostname);
     }
     
     try {
