@@ -2053,17 +2053,29 @@ public class DataNode extends ReconfigurableBase
           NodeType.DATA_NODE);
     }
 
-    DatanodeID dnId = new DatanodeID(
-                                     System.getenv("NODE_IP"), hostName,
-        // streamingAddr.getAddress().getHostAddress(), hostName, 
-        storage.getDatanodeUuid(),
-                                     Integer.decode(System.getenv("DATA_PORT")),
-                                     Integer.decode(System.getenv("HTTP_PORT")),
-                                     infoSecurePort,
-                                     Integer.decode(System.getenv("IPC_PORT")));
-            //                          getXferPort(), getInfoPort(),
-            // infoSecurePort, getIpcPort());
-    return new DatanodeRegistration(dnId, storageInfo, 
+    DatanodeID dnId = null;
+    if (dnConf.getUnsafeHostname() != null) {
+      dnId = new DatanodeID(
+              dnConf.getUnsafeHostname(),
+              hostName,
+              storage.getDatanodeUuid(),
+              Integer.decode(System.getenv("DATA_PORT")),
+              Integer.decode(System.getenv("HTTP_PORT")),
+              infoSecurePort,
+              Integer.decode(System.getenv("IPC_PORT")));
+    } else {
+      dnId = new DatanodeID(
+              streamingAddr.getAddress().getHostAddress(),
+              hostName,
+              storage.getDatanodeUuid(),
+              getXferPort(),
+              getInfoPort(),
+              infoSecurePort,
+              getIpcPort()
+      );
+    }
+
+    return new DatanodeRegistration(dnId, storageInfo,
         new ExportedBlockKeys(), VersionInfo.getVersion());
   }
 

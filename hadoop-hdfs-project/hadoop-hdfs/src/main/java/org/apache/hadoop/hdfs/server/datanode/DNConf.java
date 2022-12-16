@@ -100,6 +100,7 @@ public class DNConf {
   final boolean syncOnClose;
   final boolean encryptDataTransfer;
   final boolean connectToDnViaHostname;
+  final String unsafeHostname;
   final boolean overwriteDownstreamDerivedQOP;
   private final boolean pmemCacheRecoveryEnabled;
 
@@ -188,6 +189,7 @@ public class DNConf {
     connectToDnViaHostname = getConf().getBoolean(
         DFSConfigKeys.DFS_DATANODE_USE_DN_HOSTNAME,
         DFSConfigKeys.DFS_DATANODE_USE_DN_HOSTNAME_DEFAULT);
+    unsafeHostname = getConf().get(DFSConfigKeys.DFS_DATANODE_UNSAFE_DATANODE_HOSTNAME);
     this.blockReportInterval = getConf().getLong(
         DFS_BLOCKREPORT_INTERVAL_MSEC_KEY,
         DFS_BLOCKREPORT_INTERVAL_MSEC_DEFAULT);
@@ -360,6 +362,16 @@ public class DNConf {
    */
   public boolean getConnectToDnViaHostname() {
     return connectToDnViaHostname;
+  }
+
+  /**
+   * Returns a hostname to use instead of the "real" one.
+   * This is an expert setting and can be used in multihoming scenarios to override the detected hostname.
+   *
+   * @return null if this feature should not be used, a hostname otherwise
+   */
+  public String getUnsafeHostname() {
+    return unsafeHostname;
   }
 
   /**
