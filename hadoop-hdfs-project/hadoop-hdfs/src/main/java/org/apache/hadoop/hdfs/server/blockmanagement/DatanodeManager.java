@@ -181,6 +181,8 @@ public class DatanodeManager {
   private boolean hasClusterEverBeenMultiRack = false;
 
   private final boolean checkIpHostnameInRegistration;
+  private final boolean allowRegistrationAddressOverride;
+
   /**
    * Whether we should tell datanodes what to cache in replies to
    * heartbeat messages.
@@ -314,6 +316,11 @@ public class DatanodeManager {
     // Block invalidate limit also has some dependency on heartbeat interval.
     // Check setBlockInvalidateLimit().
     setBlockInvalidateLimit(configuredBlockInvalidateLimit);
+    this.allowRegistrationAddressOverride = conf.getBoolean(
+        DFSConfigKeys.DFS_NAMENODE_DATANODE_REGISTRATION_UNSAFE_ALLOW_ADDRESS_OVERRIDE_KEY,
+        DFSConfigKeys.DFS_NAMENODE_DATANODE_REGISTRATION_UNSAFE_ALLOW_ADDRESS_OVERRIDE_DEFAULT);
+    LOG.info(DFSConfigKeys.DFS_NAMENODE_DATANODE_REGISTRATION_UNSAFE_ALLOW_ADDRESS_OVERRIDE_KEY
+        + "=" + allowRegistrationAddressOverride);
     this.checkIpHostnameInRegistration = conf.getBoolean(
         DFSConfigKeys.DFS_NAMENODE_DATANODE_REGISTRATION_IP_HOSTNAME_CHECK_KEY,
         DFSConfigKeys.DFS_NAMENODE_DATANODE_REGISTRATION_IP_HOSTNAME_CHECK_DEFAULT);
@@ -1146,27 +1153,29 @@ public class DatanodeManager {
    */
   public void registerDatanode(DatanodeRegistration nodeReg)
       throws DisallowedDatanodeException, UnresolvedTopologyException {
-    InetAddress dnAddress = Server.getRemoteIp();
-    if (dnAddress != null) {
-      // Mostly called inside an RPC, update ip and peer hostname
-      String hostname = dnAddress.getHostName();
-      String ip = dnAddress.getHostAddress();
-      if (checkIpHostnameInRegistration && !isNameResolved(dnAddress)) {
-        // Reject registration of unresolved datanode to prevent performance
-        // impact of repetitive DNS lookups later.
-        final String message = "hostname cannot be resolved (ip="
-            + ip + ", hostname=" + hostname + ")";
-        LOG.warn("Unresolved datanode registration: " + message);
-        throw new DisallowedDatanodeException(nodeReg, message);
+    if (!allowRegistrationAddressOverride) {
+      InetAddress dnAddress = Server.getRemoteIp();
+      if (dnAddress != null) {
+        // Mostly called inside an RPC, update ip and peer hostname
+        String hostname = dnAddress.getHostName();
+        String ip = dnAddress.getHostAddress();
+        if (checkIpHostnameInRegistration && !isNameResolved(dnAddress)) {
+          // Reject registration of unresolved datanode to prevent performance
+          // impact of repetitive DNS lookups later.
+          final String message = "hostname cannot be resolved (ip="
+              + ip + ", hostname=" + hostname + ")";
+          LOG.warn("Unresolved datanode registration: " + message);
+          throw new DisallowedDatanodeException(nodeReg, message);
+        }
+        // update node registration with the ip and hostname from rpc request
+        nodeReg.setIpAddr(ip);
+        nodeReg.setPeerHostName(hostname);
       }
-      // update node registration with the ip and hostname from rpc request
-      // nodeReg.setIpAddr(ip);
-      // nodeReg.setPeerHostName(hostname);
     }
-    
+
     try {
       nodeReg.setExportedKeys(blockManager.getBlockKeys());
-  
+
       // Checks if the node is not on the hosts list.  If it is not, then
       // it will be disallowed from registering. 
       if (!hostConfigManager.isIncluded(nodeReg)) {

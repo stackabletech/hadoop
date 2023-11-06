@@ -153,7 +153,11 @@ public class DFSConfigKeys extends CommonConfigurationKeys {
   public static final String  DFS_DATANODE_USE_DN_HOSTNAME = "dfs.datanode.use.datanode.hostname";
   public static final boolean DFS_DATANODE_USE_DN_HOSTNAME_DEFAULT = false;
 
-  public static final String  DFS_DATANODE_UNSAFE_DATANODE_HOSTNAME = "dfs.datanode.unsafe.hostname";
+  public static final String  DFS_DATANODE_ADVERTISED_HOSTNAME = "dfs.datanode.advertised.hostname";
+  public static final String  DFS_DATANODE_ADVERTISED_DATA_PORT = "dfs.datanode.advertised.port";
+  public static final String  DFS_DATANODE_ADVERTISED_HTTP_PORT = "dfs.datanode.advertised.http.port";
+  public static final String  DFS_DATANODE_ADVERTISED_HTTPS_PORT = "dfs.datanode.advertised.https.port";
+  public static final String  DFS_DATANODE_ADVERTISED_IPC_PORT = "dfs.datanode.advertised.ipc.port";
 
   public static final String  DFS_DATANODE_MAX_LOCKED_MEMORY_KEY = "dfs.datanode.max.locked.memory";
   public static final long    DFS_DATANODE_MAX_LOCKED_MEMORY_DEFAULT = 0;
@@ -487,6 +491,8 @@ public class DFSConfigKeys extends CommonConfigurationKeys {
   public static final long DFS_DATANODE_PROCESS_COMMANDS_THRESHOLD_DEFAULT =
       TimeUnit.SECONDS.toMillis(2);
 
+  public static final String DFS_NAMENODE_DATANODE_REGISTRATION_UNSAFE_ALLOW_ADDRESS_OVERRIDE_KEY = "dfs.namenode.datanode.registration.unsafe.allow-address-override";
+  public static final boolean DFS_NAMENODE_DATANODE_REGISTRATION_UNSAFE_ALLOW_ADDRESS_OVERRIDE_DEFAULT = false;
   public static final String DFS_NAMENODE_DATANODE_REGISTRATION_IP_HOSTNAME_CHECK_KEY = "dfs.namenode.datanode.registration.ip-hostname-check";
   public static final boolean DFS_NAMENODE_DATANODE_REGISTRATION_IP_HOSTNAME_CHECK_DEFAULT = true;
 

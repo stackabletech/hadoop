@@ -100,7 +100,11 @@ public class DNConf {
   final boolean syncOnClose;
   final boolean encryptDataTransfer;
   final boolean connectToDnViaHostname;
-  final String unsafeHostname;
+  private final String advertisedHostname;
+  private final int advertisedDataPort;
+  private final int advertisedHttpPort;
+  private final int advertisedHttpsPort;
+  private final int advertisedIpcPort;
   final boolean overwriteDownstreamDerivedQOP;
   private final boolean pmemCacheRecoveryEnabled;
 
@@ -189,7 +193,11 @@ public class DNConf {
     connectToDnViaHostname = getConf().getBoolean(
         DFSConfigKeys.DFS_DATANODE_USE_DN_HOSTNAME,
         DFSConfigKeys.DFS_DATANODE_USE_DN_HOSTNAME_DEFAULT);
-    unsafeHostname = getConf().get(DFSConfigKeys.DFS_DATANODE_UNSAFE_DATANODE_HOSTNAME);
+    advertisedHostname = getConf().get(DFSConfigKeys.DFS_DATANODE_ADVERTISED_HOSTNAME);
+    advertisedDataPort = getConf().getInt(DFSConfigKeys.DFS_DATANODE_ADVERTISED_DATA_PORT, -1);
+    advertisedHttpPort = getConf().getInt(DFSConfigKeys.DFS_DATANODE_ADVERTISED_HTTP_PORT, -1);
+    advertisedHttpsPort = getConf().getInt(DFSConfigKeys.DFS_DATANODE_ADVERTISED_HTTPS_PORT, -1);
+    advertisedIpcPort = getConf().getInt(DFSConfigKeys.DFS_DATANODE_ADVERTISED_IPC_PORT, -1);
     this.blockReportInterval = getConf().getLong(
         DFS_BLOCKREPORT_INTERVAL_MSEC_KEY,
         DFS_BLOCKREPORT_INTERVAL_MSEC_DEFAULT);
@@ -365,13 +373,29 @@ public class DNConf {
   }
 
   /**
-   * Returns a hostname to use instead of the "real" one.
+   * Returns a hostname to advertise instead of the system hostname.
    * This is an expert setting and can be used in multihoming scenarios to override the detected hostname.
    *
-   * @return null if this feature should not be used, a hostname otherwise
+   * @return null if the system hostname should be used, otherwise a hostname
    */
-  public String getUnsafeHostname() {
-    return unsafeHostname;
+  public String getAdvertisedHostname() {
+    return advertisedHostname;
+  }
+
+  public int getAdvertisedDataPort() {
+    return advertisedDataPort;
+  }
+
+  public int getAdvertisedHttpPort() {
+    return advertisedHttpPort;
+  }
+
+  public int getAdvertisedHttpsPort() {
+    return advertisedHttpsPort;
+  }
+
+  public int getAdvertisedIpcPort() {
+    return advertisedIpcPort;
   }
 
   /**
