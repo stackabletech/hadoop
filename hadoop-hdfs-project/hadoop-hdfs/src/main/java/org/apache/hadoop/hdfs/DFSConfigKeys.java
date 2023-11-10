@@ -153,11 +153,11 @@ public class DFSConfigKeys extends CommonConfigurationKeys {
   public static final String  DFS_DATANODE_USE_DN_HOSTNAME = "dfs.datanode.use.datanode.hostname";
   public static final boolean DFS_DATANODE_USE_DN_HOSTNAME_DEFAULT = false;
 
-  public static final String  DFS_DATANODE_ADVERTISED_HOSTNAME = "dfs.datanode.advertised.hostname";
-  public static final String  DFS_DATANODE_ADVERTISED_DATA_PORT = "dfs.datanode.advertised.port";
-  public static final String  DFS_DATANODE_ADVERTISED_HTTP_PORT = "dfs.datanode.advertised.http.port";
-  public static final String  DFS_DATANODE_ADVERTISED_HTTPS_PORT = "dfs.datanode.advertised.https.port";
-  public static final String  DFS_DATANODE_ADVERTISED_IPC_PORT = "dfs.datanode.advertised.ipc.port";
+  public static final String  DFS_DATANODE_REGISTERED_HOSTNAME = "dfs.datanode.registered.hostname";
+  public static final String  DFS_DATANODE_REGISTERED_DATA_PORT = "dfs.datanode.registered.port";
+  public static final String  DFS_DATANODE_REGISTERED_HTTP_PORT = "dfs.datanode.registered.http.port";
+  public static final String  DFS_DATANODE_REGISTERED_HTTPS_PORT = "dfs.datanode.registered.https.port";
+  public static final String  DFS_DATANODE_REGISTERED_IPC_PORT = "dfs.datanode.registered.ipc.port";
 
   public static final String  DFS_DATANODE_MAX_LOCKED_MEMORY_KEY = "dfs.datanode.max.locked.memory";
   public static final long    DFS_DATANODE_MAX_LOCKED_MEMORY_DEFAULT = 0;

@@ -2054,33 +2054,33 @@ public class DataNode extends ReconfigurableBase
           NodeType.DATA_NODE);
     }
 
-    String advertisedHostname = Optional
-      .ofNullable(dnConf.getAdvertisedHostname())
+    String registeredHostname = Optional
+      .ofNullable(dnConf.getRegisteredHostname())
       .orElseGet(() -> streamingAddr.getAddress().getHostAddress());
-    int advertisedDataPort = dnConf.getAdvertisedDataPort();
-    if (advertisedDataPort == -1) {
-      advertisedDataPort = getXferPort();
+    int registeredDataPort = dnConf.getRegisteredDataPort();
+    if (registeredDataPort == -1) {
+      registeredDataPort = getXferPort();
     }
-    int advertisedHttpPort = dnConf.getAdvertisedHttpPort();
-    if (advertisedHttpPort == -1) {
-      advertisedHttpPort = getInfoPort();
+    int registeredHttpPort = dnConf.getRegisteredHttpPort();
+    if (registeredHttpPort == -1) {
+      registeredHttpPort = getInfoPort();
     }
-    int advertisedHttpsPort = dnConf.getAdvertisedHttpPort();
-    if (advertisedHttpsPort == -1) {
-      advertisedHttpPort = getInfoSecurePort();
+    int registeredHttpsPort = dnConf.getRegisteredHttpPort();
+    if (registeredHttpsPort == -1) {
+      registeredHttpPort = getInfoSecurePort();
     }
-    int advertisedIpcPort = dnConf.getAdvertisedIpcPort();
-    if (advertisedIpcPort == -1) {
-      advertisedIpcPort = getIpcPort();
+    int registeredIpcPort = dnConf.getRegisteredIpcPort();
+    if (registeredIpcPort == -1) {
+      registeredIpcPort = getIpcPort();
     }
 
-    DatanodeID dnId = new DatanodeID(advertisedHostname,
+    DatanodeID dnId = new DatanodeID(registeredHostname,
                                      hostName,
                                      storage.getDatanodeUuid(),
-                                     advertisedDataPort,
-                                     advertisedHttpPort,
-                                     advertisedHttpsPort,
-                                     advertisedIpcPort);
+                                     registeredDataPort,
+                                     registeredHttpPort,
+                                     registeredHttpsPort,
+                                     registeredIpcPort);
 
     return new DatanodeRegistration(dnId, storageInfo,
         new ExportedBlockKeys(), VersionInfo.getVersion());

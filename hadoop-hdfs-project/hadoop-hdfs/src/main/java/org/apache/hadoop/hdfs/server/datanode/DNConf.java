@@ -100,11 +100,11 @@ public class DNConf {
   final boolean syncOnClose;
   final boolean encryptDataTransfer;
   final boolean connectToDnViaHostname;
-  private final String advertisedHostname;
-  private final int advertisedDataPort;
-  private final int advertisedHttpPort;
-  private final int advertisedHttpsPort;
-  private final int advertisedIpcPort;
+  private final String registeredHostname;
+  private final int registeredDataPort;
+  private final int registeredHttpPort;
+  private final int registeredHttpsPort;
+  private final int registeredIpcPort;
   final boolean overwriteDownstreamDerivedQOP;
   private final boolean pmemCacheRecoveryEnabled;
 
@@ -193,11 +193,11 @@ public class DNConf {
     connectToDnViaHostname = getConf().getBoolean(
         DFSConfigKeys.DFS_DATANODE_USE_DN_HOSTNAME,
         DFSConfigKeys.DFS_DATANODE_USE_DN_HOSTNAME_DEFAULT);
-    advertisedHostname = getConf().get(DFSConfigKeys.DFS_DATANODE_ADVERTISED_HOSTNAME);
-    advertisedDataPort = getConf().getInt(DFSConfigKeys.DFS_DATANODE_ADVERTISED_DATA_PORT, -1);
-    advertisedHttpPort = getConf().getInt(DFSConfigKeys.DFS_DATANODE_ADVERTISED_HTTP_PORT, -1);
-    advertisedHttpsPort = getConf().getInt(DFSConfigKeys.DFS_DATANODE_ADVERTISED_HTTPS_PORT, -1);
-    advertisedIpcPort = getConf().getInt(DFSConfigKeys.DFS_DATANODE_ADVERTISED_IPC_PORT, -1);
+    registeredHostname = getConf().get(DFSConfigKeys.DFS_DATANODE_REGISTERED_HOSTNAME);
+    registeredDataPort = getConf().getInt(DFSConfigKeys.DFS_DATANODE_REGISTERED_DATA_PORT, -1);
+    registeredHttpPort = getConf().getInt(DFSConfigKeys.DFS_DATANODE_REGISTERED_HTTP_PORT, -1);
+    registeredHttpsPort = getConf().getInt(DFSConfigKeys.DFS_DATANODE_REGISTERED_HTTPS_PORT, -1);
+    registeredIpcPort = getConf().getInt(DFSConfigKeys.DFS_DATANODE_REGISTERED_IPC_PORT, -1);
     this.blockReportInterval = getConf().getLong(
         DFS_BLOCKREPORT_INTERVAL_MSEC_KEY,
         DFS_BLOCKREPORT_INTERVAL_MSEC_DEFAULT);
@@ -378,24 +378,24 @@ public class DNConf {
    *
    * @return null if the system hostname should be used, otherwise a hostname
    */
-  public String getAdvertisedHostname() {
-    return advertisedHostname;
+  public String getRegisteredHostname() {
+    return registeredHostname;
   }
 
-  public int getAdvertisedDataPort() {
-    return advertisedDataPort;
+  public int getRegisteredDataPort() {
+    return registeredDataPort;
   }
 
-  public int getAdvertisedHttpPort() {
-    return advertisedHttpPort;
+  public int getRegisteredHttpPort() {
+    return registeredHttpPort;
   }
 
-  public int getAdvertisedHttpsPort() {
-    return advertisedHttpsPort;
+  public int getRegisteredHttpsPort() {
+    return registeredHttpsPort;
   }
 
-  public int getAdvertisedIpcPort() {
-    return advertisedIpcPort;
+  public int getRegisteredIpcPort() {
+    return registeredIpcPort;
   }
 
   /**
