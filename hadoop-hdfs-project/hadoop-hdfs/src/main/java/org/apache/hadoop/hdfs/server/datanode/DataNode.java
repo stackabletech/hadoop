@@ -2065,9 +2065,9 @@ public class DataNode extends ReconfigurableBase
     if (registeredHttpPort == -1) {
       registeredHttpPort = getInfoPort();
     }
-    int registeredHttpsPort = dnConf.getRegisteredHttpPort();
+    int registeredHttpsPort = dnConf.getRegisteredHttpsPort();
     if (registeredHttpsPort == -1) {
-      registeredHttpPort = getInfoSecurePort();
+      registeredHttpsPort = getInfoSecurePort();
     }
     int registeredIpcPort = dnConf.getRegisteredIpcPort();
     if (registeredIpcPort == -1) {
