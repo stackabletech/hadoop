@@ -191,7 +191,6 @@
 
     <menu name="Tools" inherit="top">
       <item name="Hadoop Streaming" href="hadoop-streaming/HadoopStreaming.html"/>
-      <item name="Hadoop Archives" href="hadoop-archives/HadoopArchives.html"/>
       <item name="DistCp" href="hadoop-distcp/DistCp.html"/>
       <item name="HDFS Federation Balance" href="hadoop-federation-balance/HDFSFederationBalance.html"/>
       <item name="GridMix" href="hadoop-gridmix/GridMix.html"/>
