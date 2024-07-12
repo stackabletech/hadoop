@@ -71,7 +71,7 @@
       <item name="Registry" href="hadoop-project-dist/hadoop-common/registry/index.html"/>
       <item name="Async Profiler" href="hadoop-project-dist/hadoop-common/AsyncProfilerServlet.html" />
     </menu>
-    
+
     <menu name="HDFS" inherit="top">
       <item name="Architecture" href="hadoop-project-dist/hadoop-hdfs/HdfsDesign.html"/>
       <item name="User Guide" href="hadoop-project-dist/hadoop-hdfs/HdfsUserGuide.html"/>
@@ -90,7 +90,7 @@
       <item name="libhdfs (C API)" href="hadoop-project-dist/hadoop-hdfs/LibHdfs.html"/>
       <item name="WebHDFS (REST API)" href="hadoop-project-dist/hadoop-hdfs/WebHDFS.html"/>
       <item name="HttpFS" href="hadoop-hdfs-httpfs/index.html"/>
-      <item name="Short Circuit Local Reads" 
+      <item name="Short Circuit Local Reads"
           href="hadoop-project-dist/hadoop-hdfs/ShortCircuitLocalReads.html"/>
       <item name="Centralized Cache Management" href="hadoop-project-dist/hadoop-hdfs/CentralizedCacheManagement.html"/>
       <item name="NFS Gateway" href="hadoop-project-dist/hadoop-hdfs/HdfsNfsGateway.html"/>
@@ -192,7 +192,6 @@
     <menu name="Tools" inherit="top">
       <item name="Hadoop Streaming" href="hadoop-streaming/HadoopStreaming.html"/>
       <item name="Hadoop Archives" href="hadoop-archives/HadoopArchives.html"/>
-      <item name="Hadoop Archive Logs" href="hadoop-archive-logs/HadoopArchiveLogs.html"/>
       <item name="DistCp" href="hadoop-distcp/DistCp.html"/>
       <item name="HDFS Federation Balance" href="hadoop-federation-balance/HDFSFederationBalance.html"/>
       <item name="GridMix" href="hadoop-gridmix/GridMix.html"/>
@@ -209,7 +208,7 @@
       <item name="Unix Shell API" href="hadoop-project-dist/hadoop-common/UnixShellAPI.html"/>
       <item name="Metrics" href="hadoop-project-dist/hadoop-common/Metrics.html"/>
     </menu>
-    
+
     <menu name="Configuration" inherit="top">
       <item name="core-default.xml" href="hadoop-project-dist/hadoop-common/core-default.xml"/>
       <item name="hdfs-default.xml" href="hadoop-project-dist/hadoop-hdfs/hdfs-default.xml"/>
