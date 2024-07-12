@@ -40,14 +40,6 @@
       <fileMode>0755</fileMode>
     </fileSet>
     <fileSet>
-      <directory>../hadoop-extras/src/main/shellprofile.d</directory>
-      <includes>
-        <include>*</include>
-      </includes>
-      <outputDirectory>/libexec/shellprofile.d</outputDirectory>
-      <fileMode>0755</fileMode>
-    </fileSet>
-    <fileSet>
       <directory>../hadoop-pipes/src/main/native/pipes/api/hadoop</directory>
       <includes>
         <include>*.hh</include>
@@ -84,13 +76,6 @@
     </fileSet>
     <fileSet>
       <directory>../hadoop-federation-balance/target</directory>
-      <outputDirectory>/share/hadoop/${hadoop.component}/sources</outputDirectory>
-      <includes>
-        <include>*-sources.jar</include>
-      </includes>
-    </fileSet>
-    <fileSet>
-      <directory>../hadoop-extras/target</directory>
       <outputDirectory>/share/hadoop/${hadoop.component}/sources</outputDirectory>
       <includes>
         <include>*-sources.jar</include>

@@ -668,11 +668,6 @@
         <artifactId>hadoop-rumen</artifactId>
         <version>${hadoop.version}</version>
       </dependency>
-      <dependency>
-        <groupId>org.apache.hadoop</groupId>
-        <artifactId>hadoop-extras</artifactId>
-        <version>${hadoop.version}</version>
-      </dependency>
 
       <dependency>
         <groupId>org.apache.hadoop</groupId>
