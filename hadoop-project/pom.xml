@@ -665,11 +665,6 @@
       </dependency>
       <dependency>
         <groupId>org.apache.hadoop</groupId>
-        <artifactId>hadoop-datajoin</artifactId>
-        <version>${hadoop.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.hadoop</groupId>
         <artifactId>hadoop-rumen</artifactId>
         <version>${hadoop.version}</version>
       </dependency>

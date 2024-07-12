@@ -36,7 +36,6 @@
     <module>hadoop-dynamometer</module>
     <module>hadoop-rumen</module>
     <module>hadoop-gridmix</module>
-    <module>hadoop-datajoin</module>
     <module>hadoop-tools-dist</module>
     <module>hadoop-extras</module>
     <module>hadoop-pipes</module>
