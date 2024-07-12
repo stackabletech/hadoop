@@ -33,7 +33,6 @@
     <module>hadoop-streaming</module>
     <module>hadoop-distcp</module>
     <module>hadoop-federation-balance</module>
-    <module>hadoop-dynamometer</module>
     <module>hadoop-rumen</module>
     <module>hadoop-gridmix</module>
     <module>hadoop-tools-dist</module>
