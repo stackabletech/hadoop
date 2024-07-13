@@ -36,7 +36,6 @@
     <module>hadoop-rumen</module>
     <module>hadoop-tools-dist</module>
     <module>hadoop-sls</module>
-    <module>hadoop-resourceestimator</module>
     <module>hadoop-azure</module>
     <module>hadoop-aws</module>
     <module>hadoop-azure-datalake</module>
