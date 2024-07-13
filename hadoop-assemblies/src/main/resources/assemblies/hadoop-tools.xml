@@ -40,34 +40,6 @@
       <fileMode>0755</fileMode>
     </fileSet>
     <fileSet>
-      <directory>../hadoop-pipes/src/main/native/pipes/api/hadoop</directory>
-      <includes>
-        <include>*.hh</include>
-      </includes>
-      <outputDirectory>/include</outputDirectory>
-    </fileSet>
-    <fileSet>
-      <directory>../hadoop-pipes/src/main/native/utils/api/hadoop</directory>
-      <includes>
-        <include>*.hh</include>
-      </includes>
-      <outputDirectory>/include</outputDirectory>
-    </fileSet>
-    <fileSet>
-      <directory>../hadoop-pipes/target/native</directory>
-      <includes>
-        <include>*.a</include>
-      </includes>
-      <outputDirectory>lib/native</outputDirectory>
-    </fileSet>
-    <fileSet>
-      <directory>../hadoop-pipes/target/native/examples</directory>
-      <includes>
-        <include>*</include>
-      </includes>
-      <outputDirectory>lib/native/examples</outputDirectory>
-    </fileSet>
-    <fileSet>
       <directory>../hadoop-distcp/target</directory>
       <outputDirectory>/share/hadoop/${hadoop.component}/sources</outputDirectory>
       <includes>

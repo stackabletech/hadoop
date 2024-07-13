@@ -35,7 +35,6 @@
     <module>hadoop-federation-balance</module>
     <module>hadoop-rumen</module>
     <module>hadoop-tools-dist</module>
-    <module>hadoop-pipes</module>
     <module>hadoop-sls</module>
     <module>hadoop-resourceestimator</module>
     <module>hadoop-azure</module>
