@@ -204,13 +204,6 @@
       <directory>${project.build.directory}/site</directory>
       <outputDirectory>/share/doc/hadoop/${hadoop.component}</outputDirectory>
     </fileSet>
-      <fileSet>
-      <directory>hadoop-yarn/hadoop-yarn-ui/target/hadoop-yarn-ui-${project.version}</directory>
-      <outputDirectory>/share/hadoop/${hadoop.component}/webapps/ui2</outputDirectory>
-      <includes>
-        <include>**/*</include>
-      </includes>
-    </fileSet>
     <!-- Copy dependecies from hadoop-yarn-server-timelineservice as well -->
     <fileSet>
       <directory>hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timelineservice-hbase/hadoop-yarn-server-timelineservice-hbase-client/target/lib</directory>
