@@ -80,13 +80,6 @@
       </includes>
     </fileSet>
     <fileSet>
-      <directory>hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-applications-distributedshell/target</directory>
-      <outputDirectory>/share/hadoop/${hadoop.component}/sources</outputDirectory>
-      <includes>
-        <include>*-sources.jar</include>
-      </includes>
-    </fileSet>
-    <fileSet>
       <directory>hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-services/hadoop-yarn-services-core/target</directory>
       <outputDirectory>/share/hadoop/${hadoop.component}/sources</outputDirectory>
       <includes>
