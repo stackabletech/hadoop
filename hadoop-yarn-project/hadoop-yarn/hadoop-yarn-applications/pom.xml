@@ -34,7 +34,6 @@
   <!-- Do not add dependencies here, add them to the POM of the leaf module -->
 
   <modules>
-    <module>hadoop-yarn-applications-unmanaged-am-launcher</module>
     <module>hadoop-yarn-services</module>
   </modules>
 
