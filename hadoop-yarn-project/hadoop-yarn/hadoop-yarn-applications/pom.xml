@@ -33,10 +33,6 @@
 
   <!-- Do not add dependencies here, add them to the POM of the leaf module -->
 
-  <modules>
-    <module>hadoop-yarn-services</module>
-  </modules>
-
  <profiles>
   <profile>
     <id>clover</id>
