@@ -633,11 +633,6 @@
 
       <dependency>
         <groupId>org.apache.hadoop</groupId>
-        <artifactId>hadoop-streaming</artifactId>
-        <version>${hadoop.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.hadoop</groupId>
         <artifactId>hadoop-distcp</artifactId>
         <version>${hadoop.version}</version>
       </dependency>

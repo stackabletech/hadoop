@@ -30,7 +30,7 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>hadoop-streaming</module>
+
     <module>hadoop-distcp</module>
     <module>hadoop-federation-balance</module>
     <module>hadoop-tools-dist</module>

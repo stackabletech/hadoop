@@ -54,21 +54,6 @@
       </includes>
     </fileSet>
     <fileSet>
-      <directory>../hadoop-streaming/target</directory>
-      <outputDirectory>/share/hadoop/${hadoop.component}/sources</outputDirectory>
-      <includes>
-        <include>*-sources.jar</include>
-      </includes>
-    </fileSet>
-    <fileSet>
-      <directory>../hadoop-streaming/src/main/shellprofile.d</directory>
-      <includes>
-        <include>*</include>
-      </includes>
-      <outputDirectory>/libexec/shellprofile.d</outputDirectory>
-      <fileMode>0755</fileMode>
-    </fileSet>
-    <fileSet>
       <directory>../hadoop-aws/src/main/bin</directory>
       <outputDirectory>/bin</outputDirectory>
       <fileMode>0755</fileMode>
