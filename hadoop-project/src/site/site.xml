@@ -193,7 +193,6 @@
       <item name="Hadoop Streaming" href="hadoop-streaming/HadoopStreaming.html"/>
       <item name="DistCp" href="hadoop-distcp/DistCp.html"/>
       <item name="HDFS Federation Balance" href="hadoop-federation-balance/HDFSFederationBalance.html"/>
-      <item name="Rumen" href="hadoop-rumen/Rumen.html"/>
       <item name="Hadoop Benchmarking" href="hadoop-project-dist/hadoop-common/Benchmarking.html"/>
     </menu>
 
