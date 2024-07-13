@@ -221,10 +221,6 @@
       <outputDirectory>share/hadoop/${hadoop.component}/timelineservice/lib</outputDirectory>
     </fileSet>
     <fileSet>
-      <directory>hadoop-yarn/hadoop-yarn-csi/target/lib</directory>
-      <outputDirectory>share/hadoop/${hadoop.component}/csi/lib</outputDirectory>
-    </fileSet>
-    <fileSet>
       <directory>hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timelineservice-documentstore/target/lib</directory>
       <outputDirectory>share/hadoop/${hadoop.component}/timelineservice/lib</outputDirectory>
     </fileSet>
@@ -262,16 +258,6 @@
       </includes>
       <binaries>
         <outputDirectory>share/hadoop/${hadoop.component}/timelineservice/test</outputDirectory>
-        <includeDependencies>false</includeDependencies>
-        <unpack>false</unpack>
-      </binaries>
-    </moduleSet>
-    <moduleSet>
-      <includes>
-        <include>org.apache.hadoop:hadoop-yarn-csi</include>
-      </includes>
-      <binaries>
-        <outputDirectory>share/hadoop/${hadoop.component}/csi</outputDirectory>
         <includeDependencies>false</includeDependencies>
         <unpack>false</unpack>
       </binaries>
